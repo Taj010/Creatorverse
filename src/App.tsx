@@ -53,16 +53,7 @@ function App() {
     fetchCreators();
   }, []);
 
-  // Handler functions for CRUD operations
-  const handleAddCreator = (newCreator: ContentCreator) => {
-    setCreators(prev => [...prev, newCreator]);
-  };
 
-  const handleUpdateCreator = (updatedCreator: ContentCreator) => {
-    setCreators(prev => prev.map(creator => 
-      creator.name === updatedCreator.name ? updatedCreator : creator
-    ));
-  };
 
   // Define routes
   const routes = useRoutes([
