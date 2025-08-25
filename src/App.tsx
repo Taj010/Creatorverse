@@ -102,18 +102,12 @@ function App() {
   return (
     <>
       <h1>CreatorVerse</h1>
-      <p>Discover amazing content creators</p>
+                  <p>All your favorite creators, one cozy corner of the internet.
+No more "Wait, where was that link again?" or 47 open tabs haunting your browser. Just stash your favs here and hop back in whenever inspiration (or procrastination 👀) calls.
+
+Basically… it's like a VIP lounge for your internet obsession</p>
       
       {routes}
-      
-      {/* Debug info - remove this later */}
-      <div style={{ marginTop: '20px', padding: '10px', background: '#f0f0f0', fontSize: '12px' }}>
-        <p>Debug Info:</p>
-        <p>Loading: {loading ? 'true' : 'false'}</p>
-        <p>Creators count: {creators.length}</p>
-        <p>Error: {error || 'None'}</p>
-        <p>Check browser console for more details</p>
-      </div>
     </>
   )
 }

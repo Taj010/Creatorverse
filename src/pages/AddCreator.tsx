@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { ContentCreator } from '../types/ContentCreator';
 import { supabase } from '../client.ts';
+import { DEFAULT_IMAGE_URL } from '../constants/defaults';
 import './Pages.css';
 
 interface AddCreatorProps {
@@ -133,8 +134,11 @@ const AddCreator = ({ onCreatorAdded }: AddCreatorProps) => {
             value={formData.imageURL}
             onChange={handleChange}
             className="form-input"
-            placeholder="https://example.com/image.jpg"
+            placeholder={DEFAULT_IMAGE_URL}
           />
+          <small style={{ color: '#5d4e37', fontStyle: 'italic', marginTop: '4px', display: 'block' }}>
+            Leave empty to use the default image
+          </small>
         </div>
         
         {error && (

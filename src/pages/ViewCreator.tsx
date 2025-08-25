@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import type { ContentCreator } from '../types/ContentCreator';
 import { supabase } from '../client.ts';
+import { DEFAULT_IMAGE_URL } from '../constants/defaults';
 import './Pages.css';
 
 const ViewCreator = () => {
@@ -112,13 +113,11 @@ const ViewCreator = () => {
       
       <div className="creator-detail">
         <div className="creator-profile">
-          {creator.imageURL && (
-            <img 
-              src={creator.imageURL} 
-              alt={`${creator.name} profile`}
-              className="creator-detail-image"
-            />
-          )}
+          <img 
+            src={creator.imageURL || DEFAULT_IMAGE_URL} 
+            alt={`${creator.name} profile`}
+            className="creator-detail-image"
+          />
           <div className="creator-info">
             <h2>{creator.name}</h2>
             <p className="creator-description">{creator.description}</p>

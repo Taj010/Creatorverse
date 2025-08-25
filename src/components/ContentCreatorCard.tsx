@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import type { ContentCreator } from '../types/ContentCreator';
+import { DEFAULT_IMAGE_URL } from '../constants/defaults';
 import './ContentCreatorCard.css';
 
 interface ContentCreatorCardProps {
@@ -21,13 +22,11 @@ const ContentCreatorCard: React.FC<ContentCreatorCardProps> = ({ creator }) => {
   return (
     <div className="content-creator-card" onClick={handleCardClick}>
       <div className="card-header">
-        {creator.imageURL && (
-          <img 
-            src={creator.imageURL} 
-            alt={`${creator.name} profile`}
-            className="creator-image"
-          />
-        )}
+        <img 
+          src={creator.imageURL || DEFAULT_IMAGE_URL} 
+          alt={`${creator.name} profile`}
+          className="creator-image"
+        />
         <div className="creator-info">
           <h3 className="creator-name">{creator.name}</h3>
           <a 

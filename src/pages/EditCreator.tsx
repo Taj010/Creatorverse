@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import type { ContentCreator } from '../types/ContentCreator';
 import { supabase } from '../client.ts';
+import { DEFAULT_IMAGE_URL } from '../constants/defaults';
 import './Pages.css';
 
 interface EditCreatorProps {
@@ -256,18 +257,21 @@ const EditCreator = ({ onCreatorUpdated }: EditCreatorProps) => {
           />
         </div>
         
-        <div className="form-group">
-          <label htmlFor="imageURL">Image URL (optional)</label>
-          <input
-            type="url"
-            id="imageURL"
-            name="imageURL"
-            value={formData.imageURL || ''}
-            onChange={handleChange}
-            className="form-input"
-            placeholder="https://example.com/image.jpg"
-          />
-        </div>
+                 <div className="form-group">
+           <label htmlFor="imageURL">Image URL (optional)</label>
+           <input
+             type="url"
+             id="imageURL"
+             name="imageURL"
+             value={formData.imageURL || ''}
+             onChange={handleChange}
+             className="form-input"
+             placeholder={DEFAULT_IMAGE_URL}
+           />
+           <small style={{ color: '#5d4e37', fontStyle: 'italic', marginTop: '4px', display: 'block' }}>
+             Leave empty to use the default image
+           </small>
+         </div>
         
         {error && (
           <div className="error-message">
