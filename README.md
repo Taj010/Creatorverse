@@ -36,6 +36,9 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented required features:
 
 👉🏿 video link: https://www.youtube.com/watch?v=gbJl2b9Sjxk
+
+👉🏿 Try Demo: https://creatorverse-ochre.vercel.app/
+
 <!-- Replace this with whatever GIF tool you used! -->
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
